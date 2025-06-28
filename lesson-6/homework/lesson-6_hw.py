@@ -20,9 +20,7 @@ while i < len(txt):
 
 if result and result[-1] == '_':
     result.pop()
-
 print(''.join(result))
-
 
 #2 The provided code stub reads an integer, n, from STDIN. For all non-negative integers i where 0 <= i < n, print i^2.
 
@@ -39,7 +37,6 @@ num = 0
 while num < 10:
     num +=1
     print(num)
-
 
 #3.2 Print the pattern
 
@@ -115,3 +112,55 @@ for i in range(-10, 0):
 for i in range(1,11):
     print(i)
 print('Done')
+
+#11. Print all prime numbers within a range
+
+for num in range(10, 51):  
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            break
+    else:
+        print(num)
+
+#12.  Display Fibonacci series up to 10 terms
+def fib(n):
+    a = 0
+    b = 1
+    if n == 1:
+        print(a)
+    elif n < 0:
+        print('Please enter non-negative num')
+    else:
+        print(a)
+        print(b)
+    
+    for i in range(2,n):
+        c = a + b
+        print(c)
+        a = b
+        b = c
+fib(10)
+
+#13.Find the factorial of a given number
+
+num = int(input('Enter num to check its factorial: '))
+factorial = 1
+
+for i in range(1,num + 1):
+   factorial = factorial * i
+print(factorial)
+
+
+#14.Return the elements that are not common between two lists. The order of elements does not matter.
+
+list1 = [1, 1, 2] 
+list2 = [2, 3, 4]
+uncommon_list = []
+
+for i in list1:
+    if i not in list2:
+            uncommon_list.append(i)
+for j in list2:
+      if j not in list1:
+            uncommon_list.append(j)
+print(uncommon_list)
